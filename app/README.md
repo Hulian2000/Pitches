@@ -24,7 +24,7 @@ Get the specs here
 . Prerequiites
 -Python 3.6
 -Ubuntu software
-Clone the Repo
+Clone the Repository.
 Run the following command on the terminal: git clone https://pitchapplet.herokuapp.com/.
 Install Postgress
 
