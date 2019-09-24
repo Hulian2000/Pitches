@@ -1,9 +1,9 @@
 from flask import render_template,request,redirect,url_for,abort
 from flask_login import login_required,current_user
 from . import main
-from .forms import UpdateProfile,PostAPitch,PostAComment
+from .forms import UpdateProfile,PostAblog,PostAComment
 from .. import db,photos
-from ..models import User,Pitch,Comment
+from ..models import User,blog,Comment
 
 @main.route('/')
 def landingpage():
@@ -13,15 +13,15 @@ def landingpage():
 @main.route('/timeline',methods=['GET','POST'])
 @login_required
 def timeline():
-    form = PostAPitch()
+    form = PostAblog()
     if form.validate_on_submit():
-        new_pitch = Pitch(upvotes=0,downvotes=0,title=form.title.data,content=form.content.data,user_id=current_user.id)
-        new_pitch.save_pitch()
+        new_blog = blog(upvotes=0,downvotes=0,title=form.title.data,content=form.content.data,user_id=current_user.id)
+        new_blog.save_blog()
         return redirect(url_for('main.timeline'))
-    pitches= Pitch.get_pitches()
+    blog= blog.get_blog()
     users = User.query.all()
 
-    return render_template('timeline.html',form=form,pitches=pitches,users=users)
+    return render_template('timeline.html',form=form,blog=blog,users=users)
  
 @main.route('/user/profile/<uname>')
 @login_required
@@ -30,9 +30,9 @@ def profile(uname):
 
     if user is None:
         abort(404)
-    pitches = Pitch.query.order_by(Pitch.posted.desc()).all()
+    blog = blog.query.order_by(blog.posted.desc()).all()
     
-    return render_template('profile.html', user = user, pitches=pitches)
+    return render_template('profile.html', user = user, blog=blog)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
@@ -63,23 +63,23 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.update_profile',uname=uname))
 
-@main.route('/pitch/new', methods=['GET', 'POST'])
+@main.route('/blog/new', methods=['GET', 'POST'])
 @login_required
-def new_pitch():
-    pitch_form = PostAPitch()
-    if pitch_form.validate_on_submit():
-        title = pitch_form.title.data
-        pitch = pitch_form.text.data
+def new_blog():
+    blog_form = PostAblog()
+    if blog_form.validate_on_submit():
+        title = blog_form.title.data
+        blog = blog_form.text.data
 
-        # Updated pitch instance
-        new_pitch = Pitch(pitch_title=title, pitch_content=pitch, user=current_user)
+        # Updated blog instance
+        new_blog = blog(blog_title=title, blog_content=blog, user=current_user)
 
-        # Save pitch method
-        new_pitch.save_pitch()
+        # Save blog method
+        new_blog.save_blog()
         return redirect(url_for('.index'))
 
-    title = 'New pitch'
-    return render_template('pitch.html', title=title)
+    title = 'New blog'
+    return render_template('blog.html', title=title)
 
 
   

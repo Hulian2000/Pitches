@@ -16,7 +16,7 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
-    pitches = db.relationship('Pitch',backref = 'user',lazy = "dynamic")
+    blog = db.relationship('blog',backref = 'user',lazy = "dynamic")
 
     @property
     def password(self):
@@ -33,9 +33,9 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User {self.username}'
 
-class Pitch(db.Model):
+class blog(db.Model):
 
-    __tablename__ = 'pitches'
+    __tablename__ = 'blog'
 
     id = db.Column(db.Integer,primary_key = True)
     upvotes = db.Column(db.Integer)
@@ -46,14 +46,14 @@ class Pitch(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comment',backref = 'user',lazy = "dynamic")
 
-    def save_pitch(self):
+    def save_blog(self):
         db.session.add(self)
         db.session.commit()
 
     @classmethod
-    def get_pitches(cls):
-        pitches = Pitch.query.order_by(Pitch.posted.desc()).all()
-        return pitches
+    def get_blog(cls):
+        blog = blog.query.order_by(blog.posted.desc()).all()
+        return blog
 
 class Comment(db.Model):
 
@@ -62,7 +62,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     content = db.Column(db.String)
     posted = db.Column(db.DateTime,default=datetime.utcnow)
-    pitch_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
+    blog_id = db.Column(db.Integer,db.ForeignKey("blog.id"))
 
     def save_comment(self):
         db.session.add(self)

@@ -1,21 +1,21 @@
-## Pitch.
-Pitch It is a web application that is meant for users to add pitches on 7 different categories
+## blog.
+blog It is a web application that is meant for users to add blog on 7 different categories
 September 20th, 2019
 By Hulian Juba.
 ## Description.
-The Pitch It web application is meant for users to post pitches on any of the 7 different categories. These categories are:
+The blog It web application is meant for users to post blog on any of the 7 different categories. These categories are:
 
-1. Interview Pitch
-2. Product Pitch
-3. Promotion Pitch
+1. Interview blog
+2. Product blog
+3. Promotion blog
 4. Business
 5. Academic
 6. Political
 7. Technology
 8. Health
-#### Users can select any of the categories from the navbar to view the pitches on these categories.
+#### Users can select any of the categories from the navbar to view the blog on these categories.
 
-Other users can give feedback on the pitch posts by commenting, liking or not liking the pitch.
+Other users can give feedback on the blog posts by commenting, liking or not liking the blog.
 
 ## Specifications.
 Get the specs here
@@ -35,7 +35,7 @@ Run the following commands in the same terminal: sudo apt-get install python3.6-
 Install dependancies that will create an environment for the app to run pip3 install -r requirements
 
 Prepare environment variables
-export DATABASE_URL='postgresql+psycopg2://username:password@localhost/pitchit'
+export DATABASE_URL='postgresql+psycopg2://username:password@localhost/blogit'
 export SECRET_KEY='Your secret key'
 Run Database Migrations
 python manage.py db init

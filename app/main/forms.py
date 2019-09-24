@@ -7,10 +7,10 @@ class UpdateProfile(FlaskForm):
     bio = TextAreaField('Update bio.',validators = [Required()])
     submit = SubmitField('Update')
 
-class PostAPitch (FlaskForm):
+class PostAblog (FlaskForm):
     title = StringField('Title',validators = [Required()])
-    content = TextAreaField('Pitch',validators = [Required()])
-    submit = SubmitField('Pitch')
+    content = TextAreaField('blog',validators = [Required()])
+    submit = SubmitField('blog')
 
 class PostAComment (FlaskForm):
     comment = TextAreaField(validators = [Required()])
