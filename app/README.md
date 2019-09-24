@@ -1,7 +1,7 @@
 Pitch
 Pitch It is a web application that is meant for users to add pitches on 7 different categories
 September 20th, 2019
-By Richard Waweru
+By Hulian Juba.
 Description.
 The Pitch It web application is meant for users to post pitches on any of the 7 different categories. These categories are:
 
@@ -57,7 +57,7 @@ Technologies used
 -Heroku
 -Postgresql
 Support and contact details
-Contact me on developer.waweru@gmail.com for any comments, reviews or advice.
+Contact me on developer.hulian.ashraf703@yahoo.com for any comments, reviews or advice.
 
 License MTN 2019.
-Copyright (c) .
+Copyright (c) .Hulian Juba.
