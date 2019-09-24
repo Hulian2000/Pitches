@@ -44,7 +44,7 @@ python manage.py db upgrade
 Running the app in development
 In the same terminal type: python3 manage.py server
 
-Open the browser on https://pitchapplet.herokuapp.com/
+Open the browser on https://jhblog.herokuapp.com
 
 Known bugs
 SQLAlchemy errors, automatic sign out has a short time span
