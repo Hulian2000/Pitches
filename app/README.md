@@ -5,7 +5,7 @@ By Hulian Juba.
 Description.
 The Pitch It web application is meant for users to post pitches on any of the 7 different categories. These categories are:
 
-1. Interview Pitch
+1. 
 2. Product Pitch
 3. Promotion Pitch
 4. Business
