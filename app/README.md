@@ -17,7 +17,7 @@ The Pitch It web application is meant for users to post pitches on any of the 7 
 
 Other users can give feedback on the pitch posts by commenting, liking or not liking the pitch.
 
-Specifications
+## Specifications
 Get the specs here
 
 Set-up and Installation
