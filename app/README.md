@@ -21,7 +21,7 @@ Other users can give feedback on the pitch posts by commenting, liking or not li
 Get the specs here
 
 ## Set-up and Installation
-Prerequiites
+. Prerequiites
 -Python 3.6
 -Ubuntu software
 Clone the Repo
