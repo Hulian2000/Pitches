@@ -49,7 +49,7 @@ Open the browser on https://jhblog.herokuapp.com
 Known bugs
 SQLAlchemy errors, automatic sign out has a short time span
 
-Technologies used
+## Technologies used.
 -Python 3.6
 -HTML
 -Bootstrap 4
