@@ -9,6 +9,7 @@ The Pitch It web application is meant for users to post pitches on any of the 7 
 2. Product Pitch
 3. Promotion Pitch
 4. Business
+5. Academic
 6. Political
 7. Technology
 8. Health
@@ -30,17 +31,20 @@ Install Postgress
 Create a Virtual Environment:
 Run the following commands in the same terminal: sudo apt-get install python3.6-venv python3.6 -m venv virtual source virtual/bin/activate
 
+Install dependancies
 Install dependancies that will create an environment for the app to run pip3 install -r requirements
 
 Prepare environment variables
 export DATABASE_URL='postgresql+psycopg2://username:password@localhost/pitchit'
 export SECRET_KEY='Your secret key'
 Run Database Migrations
+python manage.py db init
 python manage.py db migrate -m "initial migration"
 python manage.py db upgrade
 Running the app in development
 In the same terminal type: python3 manage.py server
 
+Open the browser on https://pitchapplet.herokuapp.com/
 
 Known bugs
 SQLAlchemy errors, automatic sign out has a short time span
