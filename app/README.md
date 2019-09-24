@@ -25,7 +25,7 @@ Get the specs here
 -Python 3.6
 -Ubuntu software
 Clone the Repository.
-Run the following command on the terminal: git clone https://pitchapplet.herokuapp.com/.
+Run the following command on the terminal: git clone 
 Install Postgress
 
 Create a Virtual Environment:
