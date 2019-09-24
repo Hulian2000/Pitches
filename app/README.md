@@ -20,7 +20,7 @@ Other users can give feedback on the pitch posts by commenting, liking or not li
 ## Specifications.
 Get the specs here
 
-Set-up and Installation
+## Set-up and Installation
 Prerequiites
 -Python 3.6
 -Ubuntu software
